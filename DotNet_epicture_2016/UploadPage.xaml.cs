@@ -15,16 +15,16 @@ using Windows.UI.Xaml.Navigation;
 
 namespace DotNet_epicture_2016
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class UploadPage : Page
     {
-        public MainPage()
+        public UploadPage()
         {
             this.InitializeComponent();
         }
 
-        private void Upload_OnClick(object sender, RoutedEventArgs e)
+        private void BackToMain_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(UploadPage));
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }
