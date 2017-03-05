@@ -39,6 +39,9 @@
                         <TextBox x:Name="DescriptionBox" TextWrapping="Wrap"/>
                         <TextBlock x:Name="FormError" TextWrapping="Wrap" Text="" Foreground="Red" Visibility="Collapsed"
                                    TextAlignment="Center" FontWeight="ExtraBlack" Margin="0, 10, 0, 0"/>
+                        <Button x:Name="PickFile" Foreground="White"  Background="Gray" Content="Pick a photo" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0" Click="FilePickerClicked" BorderBrush="Gray"/>
+                        <Button x:Name="SendButton" Foreground="White"  Background="Gray" Content="Send" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,50,0,0" Click="UploadImageButtonClicked" BorderBrush="Gray"/>
+
                     </StackPanel>
                 </Grid>
             </ScrollViewer>

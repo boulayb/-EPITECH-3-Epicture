@@ -38,32 +38,41 @@
                         <ColumnDefinition Width="0.20*"/>
                         <ColumnDefinition Width="0.09*"/>
                     </Grid.ColumnDefinitions>
-                        <TextBox x:Name="SearchBox" TextWrapping="Wrap" PlaceholderText="Search image"
+                    <TextBox x:Name="SearchBox" TextWrapping="Wrap" PlaceholderText="Search image"
                                  Grid.Column="1" VerticalAlignment="Center"/>
-                        <TextBox x:Name="WidthBox" TextWrapping="Wrap" PlaceholderText="Width"
-                                 Grid.Column="3" VerticalAlignment="Center"/>
-                        <TextBox x:Name="HeightBox" TextWrapping="Wrap" PlaceholderText="Height"
-                                 Grid.Column="4" VerticalAlignment="Center"/>
-                        <ComboBox x:Name="TypeBox"  Grid.Column="6" VerticalAlignment="Center" PlaceholderText="Type">
-                            <ComboBoxItem Content="jpeg"/>
-                            <ComboBoxItem Content="png"/>
-                        </ComboBox>
-                        <Button Grid.Column="7" x:Name="Search" FontFamily="Segoe MDL2 Assets" Content="&#xE7C5;"
+                    <ComboBox x:Name="SizeBox"  Grid.Column="3" VerticalAlignment="Center" PlaceholderText="Size" SelectedIndex="0">
+                        <ComboBoxItem Content="any"/>
+                        <ComboBoxItem Content="small"/>
+                        <ComboBoxItem Content="med"/>
+                        <ComboBoxItem Content="big"/>
+                        <ComboBoxItem Content="lrg"/>
+                        <ComboBoxItem Content="huge"/>
+                    </ComboBox>
+                    <ComboBox x:Name="TypeBox"  Grid.Column="4" VerticalAlignment="Center" PlaceholderText="Type" SelectedIndex="0">
+                        <ComboBoxItem Content="any"/>
+                        <ComboBoxItem Content="gif"/>
+                        <ComboBoxItem Content="anigif"/>
+                        <ComboBoxItem Content="jpeg"/>
+                        <ComboBoxItem Content="png"/>
+                    </ComboBox>
+                    <Button Grid.Column="7" x:Name="Search" FontFamily="Segoe MDL2 Assets" Content="&#xE7C5;"
                                  Width="40" Height="40"
-                                 Background="Transparent"> <!--Click="Search_OnClick">-->
-                           <ToolTipService.ToolTip>
-                                <ToolTip Content="Search images"/>
-                           </ToolTipService.ToolTip>
-                        </Button>
+                                 Background="Transparent" Click="SearchImageClicked">
+                        <!--Click="Search_OnClick">-->
+                        <ToolTipService.ToolTip>
+                            <ToolTip Content="Search images"/>
+                        </ToolTipService.ToolTip>
+                    </Button>
                 </Grid>
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="auto">
-                    <VariableSizedWrapGrid Name="TodoList" Background="Black"
-                                       Orientation="Horizontal">
+                    <VariableSizedWrapGrid Name="ImageContainer" Background="Black"
+                                       Orientation="Horizontal" Opacity="0.3">
+                        <Image x:Name="image" Height="100" Width="100"/>
                     </VariableSizedWrapGrid>
                 </ScrollViewer>
             </Grid>
         </SplitView.Content>
 
     </SplitView>
-    
+
 </Page>
